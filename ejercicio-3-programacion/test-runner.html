@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Runner - Ejercicio 3</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .test-section {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .test-case {
+            margin: 10px 0;
+            padding: 15px;
+            border-left: 4px solid #ddd;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .pass {
+            border-left-color: #28a745;
+            background-color: #d4edda;
+        }
+
+        .fail {
+            border-left-color: #dc3545;
+            background-color: #f8d7da;
+        }
+
+        .not-implemented {
+            border-left-color: #6c757d;
+            background-color: #e9ecef;
+        }
+
+        .error {
+            color: #dc3545;
+            font-family: monospace;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        h2 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        .summary {
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .instructions {
+            background: #e7f3ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #007bff;
+        }
+
+        .file-path {
+            font-family: monospace;
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #e83e8c;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .refresh-note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🧪 Test Runner - Ejercicio 3: Programación General</h1>
+
+    <div class="instructions">
+        <h3>📋 Instrucciones:</h3>
+        <ol>
+            <li>Abre los archivos JavaScript en tu editor favorito</li>
+            <li>Implementa las funciones reemplazando <code>throw new Error('Not implemented')</code></li>
+            <li>Guarda los archivos</li>
+            <li>Refresca esta página para ver los resultados</li>
+        </ol>
+
+        <div class="refresh-note">
+            💡 <strong>Tip:</strong> Después de modificar cualquier archivo .js, refresca esta página (F5) para ejecutar
+            los tests actualizados.
+        </div>
+    </div>
+
+    <div class="summary" id="summary">
+        Cargando tests...
+    </div>
+
+    <div class="test-section">
+        <h2>📊 Problema 1: Manipulación de Arrays</h2>
+        <p>Edita: <span class="file-path">problemas/1-arrays.js</span></p>
+        <div id="arrays-tests"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>⚡ Problema 2: Programación Asíncrona</h2>
+        <p>Edita: <span class="file-path">problemas/2-async.js</span></p>
+        <div id="async-tests"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>🧠 Problema 3: Algoritmos</h2>
+        <p>Edita: <span class="file-path">problemas/3-algorithms.js</span></p>
+        <div id="algorithms-tests"></div>
+    </div>
+
+    <button onclick="window.location.reload()">🔄 Recargar Tests</button>
+
+    <!-- Cargar archivos JS - SIN modules, script tags normales -->
+    <script src="data/sample-data.js"></script>
+    <script src="problemas/1-arrays.js"></script>
+    <script src="problemas/2-async.js"></script>
+    <script src="problemas/3-algorithms.js"></script>
+    <script src="tests/test-suite.js"></script>
+</body>
+
+</html>
