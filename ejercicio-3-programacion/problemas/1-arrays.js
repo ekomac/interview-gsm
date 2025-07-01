@@ -13,16 +13,7 @@
  * Output: { food: 300, transport: 50 }
  */
 function groupByCategory(transactions) {
-    // throw new Error('Not implemented');
-    return null
-    return transactions.reduce((acc, transaction) => {
-        if (acc[transaction.category]) {
-            acc[transaction.category] += transaction.amount;
-        } else {
-            acc[transaction.category] = transaction.amount;
-        }
-        return acc;
-    }, {});
+    throw new Error('Not implemented');
 }
 
 /**
