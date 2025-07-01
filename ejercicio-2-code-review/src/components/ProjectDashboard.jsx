@@ -4,6 +4,8 @@ const ProjectDashboard = ({ projectId }) => {
   const [project, setProject] = useState(null);
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [preferences, setPreferences] = useState({ theme: 'light', autoRefresh: true });
+
 
   useEffect(() => {
     setLoading(true);
@@ -12,15 +14,21 @@ const ProjectDashboard = ({ projectId }) => {
       .then(res => res.json())
       .then(data => {
         setProject(data);
+
+        setPreferences({
+          theme: data.preferredTheme || 'light',
+          autoRefresh: data.autoRefresh !== undefined ? data.autoRefresh : true
+        });
         
         return fetch(`/api/projects/${projectId}/tasks`);
       })
       .then(res => res.json())
       .then(tasksData => {
         setTasks(tasksData);
+
         setLoading(false);
       });
-  }, [projectId]);
+  }, [projectId, preferences]);
 
   const handleTaskComplete = (taskId) => {
     fetch(`/api/tasks/${taskId}/complete`, { method: 'POST' });
